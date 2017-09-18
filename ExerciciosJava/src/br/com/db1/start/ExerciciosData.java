@@ -1,5 +1,10 @@
 package br.com.db1.start;
 
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.Period;
+import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
 
 public class ExerciciosData {
@@ -39,6 +44,12 @@ public class ExerciciosData {
 		return idade;
 	}
 
+	//LocalDate = primeiraData = LocalDate.of(2017, 10, 10);
+	@SuppressWarnings("unused")
+	private Integer calcularDiasEntreDatas2(LocalDate primeiraData, LocalDate segundaData){
+		return (int) ChronoUnit.DAYS.between(primeiraData, segundaData);
+	}
+	
 	public Integer calcularDiasEntreDatas(Calendar primeiraData, Calendar segundaData) {
 		Integer dias = Math.abs(segundaData.get(Calendar.DAY_OF_YEAR) - primeiraData.get(Calendar.DAY_OF_YEAR));
 		if (segundaData.get(Calendar.YEAR) == primeiraData.get(Calendar.YEAR))
@@ -95,4 +106,5 @@ public class ExerciciosData {
 		Integer valorTotal = (horas * 360 + minutos * 60 + segundos);
 		return valorTotal.doubleValue();
 	}
+
 }
