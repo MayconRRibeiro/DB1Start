@@ -45,9 +45,9 @@ public class ProdutoTest {
 		Collections.sort(produtos, comparator);
 		System.out.println("Lista ordenada por descrição: " + produtos);
 
-		Assert.assertTrue(produtos.get(0).getDescricao() == "Caneca");
-		Assert.assertTrue(produtos.get(1).getDescricao() == "Celular");
-		Assert.assertTrue(produtos.get(2).getDescricao() == "Monitor");
+		Assert.assertEquals("Caneca", produtos.get(0).getDescricao());
+		Assert.assertEquals("Celular", produtos.get(1).getDescricao());
+		Assert.assertEquals("Monitor", produtos.get(2).getDescricao());
 	}
 
 }
